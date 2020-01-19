@@ -60,6 +60,7 @@ int main(int argc, char** argv) {
     }
     gflags::ParseCommandLineFlags(&argc, &argv, false);
     runPath = newRunPath(FLAGS_rundir, FLAGS_runname, FLAGS_tag);
+    LOG(INFO) << "Test run here... ...";
   } else if (runStatus == kContinueMode) {
     runPath = argv[2];
     while (fileExists(getRunFile("model_last.bin", runIdx, runPath))) {
