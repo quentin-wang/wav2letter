@@ -135,6 +135,8 @@ int main(int argc, char** argv) {
   int worldSize = fl::getWorldSize();
   bool isMaster = (worldRank == 0);
 
+  LOG(INFO) << "worldRank out: " << worldRank << " " << worldSize;
+
   LOG_MASTER(INFO) << "Gflags after parsing \n" << serializeGflags("; ");
   LOG_MASTER(INFO) << "Experiment path: " << runPath;
   LOG_MASTER(INFO) << "Experiment runidx: " << runIdx;
