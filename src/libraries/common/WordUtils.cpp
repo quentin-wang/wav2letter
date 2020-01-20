@@ -13,6 +13,9 @@
 #include "libraries/common/Defines.h"
 #include "libraries/common/Utils.h"
 
+#include "libraries/common/Misc.h"
+#include <iostream>
+
 namespace w2l {
 
 Dictionary createWordDict(const LexiconMap& lexicon) {
@@ -42,6 +45,8 @@ LexiconMap loadWords(const std::string& filename, int maxWords) {
     if (fields.size() < 2) {
       throw std::runtime_error("[loadWords] Invalid line: " + line);
     }
+    std::cout << fields << std::endl;  // wbn
+
     const std::string& word = fields[0];
     std::vector<std::string> spelling(fields.size() - 1);
     std::copy(fields.begin() + 1, fields.end(), spelling.begin());
