@@ -44,8 +44,8 @@ LexiconMap loadWords(const std::string& filename, int maxWords) {
     if (fields.size() < 2) {
       throw std::runtime_error("[loadWords] Invalid line: " + line);
     }
-    std::cout << fields << std::endl;  // wbn
-
+    // std::cout << fields << std::endl;  // wbn
+    printVec(fields);
     const std::string& word = fields[0];
     std::vector<std::string> spelling(fields.size() - 1);
     std::copy(fields.begin() + 1, fields.end(), spelling.begin());
