@@ -4,7 +4,7 @@
 #include <vector>
 #include <algorithm>
 
-// namespace w2l {
+namespace w2l {
 
 template <typename T>
 std::ostream& operator<<(std::ostream& os, std::vector<T> vec) {
@@ -14,7 +14,6 @@ std::ostream& operator<<(std::ostream& os, std::vector<T> vec) {
   return os;
 }
 
-// }
 template <typename T>
 void printer(const T &val)
 {
@@ -24,4 +23,6 @@ void printer(const T &val)
 void printVec(const std::vector<std::string> &valList)
 {
   std::for_each(valList.cbegin(), valList.cend(), printer<std::string>);
+}
+
 }
